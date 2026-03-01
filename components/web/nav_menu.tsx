@@ -12,14 +12,14 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-export function NavigationLinks() {
+export function NavMenu() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Overview</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid p-1">
+            <ul className="grid w-28">
               <li>
                 <NavigationMenuLink
                   render={
@@ -49,10 +49,11 @@ export function NavigationLinks() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+
         <NavigationMenuItem>
           <NavigationMenuTrigger>Journey</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid p-1">
+            <ul className="grid w-28">
               <li>
                 <NavigationMenuLink
                   render={
@@ -75,16 +76,18 @@ export function NavigationLinks() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Initiatives</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Initiative</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="p-1">
+            <ul className="w-56">
               <ListItem href="/pakarnatam" title="Pakarnatam">
-                Pakarnatam (Documentaion on theyyam)
+                Documentaion on theyyam
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+
         <NavigationMenuItem>
           <NavigationMenuLink
             className={navigationMenuTriggerStyle()}

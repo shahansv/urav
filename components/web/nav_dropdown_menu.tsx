@@ -1,6 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
+import { Button } from "../ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,15 +10,15 @@ import {
   DropdownMenuLabel,
   DropdownMenuPortal,
   DropdownMenuSeparator,
+  DropdownMenuShortcut,
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Menu } from "lucide-react";
 import Link from "next/link";
 
-export function NavigationDropdownMenu() {
+export function NavDropdownMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
@@ -66,7 +67,12 @@ export function NavigationDropdownMenu() {
               <DropdownMenuSubContent>
                 <Link href="/pakarnatam">
                   <DropdownMenuItem>
-                    Pakarnatam <br /> (Documentaion on theyyam)
+                    <div>
+                      <div className="font-semibold">Pakarnatam</div>
+                      <div className="text-neutral-500">
+                        (Documentaion on theyyam)
+                      </div>
+                    </div>
                   </DropdownMenuItem>
                 </Link>
               </DropdownMenuSubContent>
