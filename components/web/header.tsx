@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -45,7 +45,7 @@ export function Header() {
           />
         </Link>
 
-        <div className="hidden lg:flex items-center">
+        <div className="hidden lg:flex items-center justify-center bg-[#630D15] text-white rounded-2xl px-4 py-0.5 ">
           <NavMenu />
         </div>
 
