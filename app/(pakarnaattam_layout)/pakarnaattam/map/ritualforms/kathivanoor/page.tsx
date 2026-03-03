@@ -140,8 +140,10 @@ export default function PakarnaattamKathivanoorPage() {
           </div>
 
           <div className="my-64 flex justify-between text-sm sm:text-base">
-            <Link href="/pakarnaattam/map hover:animate-pulse">
-              <p className="hover:underline">Go back to map</p>
+            <Link href="/pakarnaattam/map">
+              <p className="hover:underline hover:animate-pulse">
+                Go back to map
+              </p>
             </Link>
             <Link href="/pakarnaattam/map/ritualforms">
               <p className="hover:underline hover:animate-pulse">
