@@ -97,113 +97,117 @@ export default function PakarnaattamCharacterPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-between gap-12 sm:gap-20 w-full">
-              <motion.div
-                className="flex flex-col items-center gap-4 cursor-pointer"
-                initial="rest"
-                whileHover="hover"
-                animate="rest"
-              >
-                <div className="relative w-64 h-96 sm:w-72 sm:h-112 md:w-80 md:h-128">
-                  <motion.div
-                    variants={{
-                      rest: { opacity: 1 },
-                      hover: { opacity: 0 },
-                    }}
-                    transition={{ duration: 0.4 }}
-                    className="absolute inset-0"
-                  >
-                    <Image
-                      src="https://ik.imagekit.io/shahansv/Urav/Kannan.png"
-                      alt="Kannan"
-                      fill
-                      className="object-contain"
-                      priority
-                    />
-                  </motion.div>
-
-                  <motion.div
-                    variants={{
-                      rest: { opacity: 0 },
-                      hover: { opacity: 1 },
-                    }}
-                    transition={{ duration: 0.4 }}
-                    className="absolute inset-0"
-                  >
-                    <Image
-                      src="https://ik.imagekit.io/shahansv/Urav/KannanMask.png"
-                      alt="Kannan Mask"
-                      fill
-                      className="object-contain"
-                      priority
-                    />
-                  </motion.div>
-                </div>
-
-                <motion.p
-                  className="text-lg sm:text-xl font-semibold"
-                  variants={{
-                    rest: { scale: 1, color: "#ffffff" },
-                    hover: { scale: 1.05, color: "#dc2626" },
-                  }}
-                  transition={{ duration: 0.3 }}
+              <Link href="/pakarnaattam/map">
+                <motion.div
+                  className="flex flex-col items-center gap-4 cursor-pointer"
+                  initial="rest"
+                  whileHover="hover"
+                  animate="rest"
                 >
-                  Kannan
-                </motion.p>
-              </motion.div>
+                  <div className="relative w-64 h-96 sm:w-72 sm:h-112 md:w-80 md:h-128">
+                    <motion.div
+                      variants={{
+                        rest: { opacity: 1 },
+                        hover: { opacity: 0 },
+                      }}
+                      transition={{ duration: 0.4 }}
+                      className="absolute inset-0"
+                    >
+                      <Image
+                        src="https://ik.imagekit.io/shahansv/Urav/Kannan.png"
+                        alt="Kannan"
+                        fill
+                        className="object-contain"
+                        priority
+                      />
+                    </motion.div>
 
-              <motion.div
-                className="flex flex-col items-center gap-4 cursor-pointer"
-                initial="rest"
-                whileHover="hover"
-                animate="rest"
-              >
-                <div className="relative w-64 h-96 sm:w-72 sm:h-112 md:w-80 md:h-128">
-                  <motion.div
+                    <motion.div
+                      variants={{
+                        rest: { opacity: 0 },
+                        hover: { opacity: 1 },
+                      }}
+                      transition={{ duration: 0.4 }}
+                      className="absolute inset-0"
+                    >
+                      <Image
+                        src="https://ik.imagekit.io/shahansv/Urav/KannanMask.png"
+                        alt="Kannan Mask"
+                        fill
+                        className="object-contain"
+                        priority
+                      />
+                    </motion.div>
+                  </div>
+
+                  <motion.p
+                    className="text-lg sm:text-xl font-semibold"
                     variants={{
-                      rest: { opacity: 1 },
-                      hover: { opacity: 0 },
+                      rest: { scale: 1, color: "#ffffff" },
+                      hover: { scale: 1.05, color: "#dc2626" },
                     }}
-                    transition={{ duration: 0.4 }}
-                    className="absolute inset-0"
+                    transition={{ duration: 0.3 }}
                   >
-                    <Image
-                      src="https://ik.imagekit.io/shahansv/Urav/Neelu.png"
-                      alt="Neelu"
-                      fill
-                      className="object-contain"
-                      priority
-                    />
-                  </motion.div>
+                    Kannan
+                  </motion.p>
+                </motion.div>
+              </Link>
 
-                  <motion.div
-                    variants={{
-                      rest: { opacity: 0 },
-                      hover: { opacity: 1 },
-                    }}
-                    transition={{ duration: 0.4 }}
-                    className="absolute inset-0"
-                  >
-                    <Image
-                      src="https://ik.imagekit.io/shahansv/Urav/NeeluMask.png"
-                      alt="Neelu Mask"
-                      fill
-                      className="object-contain"
-                      priority
-                    />
-                  </motion.div>
-                </div>
-
-                <motion.p
-                  className="text-lg sm:text-xl font-semibold"
-                  variants={{
-                    rest: { scale: 1, color: "#ffffff" },
-                    hover: { scale: 1.05, color: "#dc2626" },
-                  }}
-                  transition={{ duration: 0.3 }}
+              <Link href="/pakarnaattam/map">
+                <motion.div
+                  className="flex flex-col items-center gap-4 cursor-pointer"
+                  initial="rest"
+                  whileHover="hover"
+                  animate="rest"
                 >
-                  Neelu
-                </motion.p>
-              </motion.div>
+                  <div className="relative w-64 h-96 sm:w-72 sm:h-112 md:w-80 md:h-128">
+                    <motion.div
+                      variants={{
+                        rest: { opacity: 1 },
+                        hover: { opacity: 0 },
+                      }}
+                      transition={{ duration: 0.4 }}
+                      className="absolute inset-0"
+                    >
+                      <Image
+                        src="https://ik.imagekit.io/shahansv/Urav/Neelu.png"
+                        alt="Neelu"
+                        fill
+                        className="object-contain"
+                        priority
+                      />
+                    </motion.div>
+
+                    <motion.div
+                      variants={{
+                        rest: { opacity: 0 },
+                        hover: { opacity: 1 },
+                      }}
+                      transition={{ duration: 0.4 }}
+                      className="absolute inset-0"
+                    >
+                      <Image
+                        src="https://ik.imagekit.io/shahansv/Urav/NeeluMask.png"
+                        alt="Neelu Mask"
+                        fill
+                        className="object-contain"
+                        priority
+                      />
+                    </motion.div>
+                  </div>
+
+                  <motion.p
+                    className="text-lg sm:text-xl font-semibold"
+                    variants={{
+                      rest: { scale: 1, color: "#ffffff" },
+                      hover: { scale: 1.05, color: "#dc2626" },
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    Neelu
+                  </motion.p>
+                </motion.div>
+              </Link>
             </div>
           </div>
         </div>
