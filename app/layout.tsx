@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import SmoothScrollProvider from "@/components/web/smooth_scroll_provider";
 
 export const metadata: Metadata = {
   title: "Urav",
@@ -19,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={` ${AvenirFont.className}  antialiased`}>
-        {children}
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
   );

@@ -23,14 +23,20 @@ export function NavMenu() {
               <li>
                 <NavigationMenuLink
                   render={
-                    <Link href="/about" className="flex-row items-center gap-2">
+                    <Link
+                      href="/about"
+                      className="flex-row items-center gap-2 hover:text-[#630D15] transition-colors"
+                    >
                       About
                     </Link>
                   }
                 />
                 <NavigationMenuLink
                   render={
-                    <Link href="/team" className="flex-row items-center gap-2">
+                    <Link
+                      href="/team"
+                      className="flex-row items-center gap-2 hover:text-[#630D15] transition-colors"
+                    >
                       Team
                     </Link>
                   }
@@ -39,7 +45,7 @@ export function NavMenu() {
                   render={
                     <Link
                       href="/sponsers"
-                      className="flex-row items-center gap-2"
+                      className="flex-row items-center gap-2 hover:text-[#630D15] transition-colors"
                     >
                       Sponsers
                     </Link>
@@ -57,7 +63,10 @@ export function NavMenu() {
               <li>
                 <NavigationMenuLink
                   render={
-                    <Link href="/blogs" className="flex-row items-center gap-2">
+                    <Link
+                      href="/blogs"
+                      className="flex-row items-center gap-2 hover:text-[#630D15] transition-colors"
+                    >
                       Blogs
                     </Link>
                   }
@@ -66,7 +75,7 @@ export function NavMenu() {
                   render={
                     <Link
                       href="/making"
-                      className="flex-row items-center gap-2"
+                      className="flex-row items-center gap-2 hover:text-[#630D15] transition-colors"
                     >
                       Making
                     </Link>
@@ -80,8 +89,8 @@ export function NavMenu() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Initiative</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="w-56">
-              <ListItem href="/pakarnatam" title="Pakarnatam">
+            <ul className="w-56 hover:text-[#630D15] transition-colors">
+              <ListItem href="/initiative/pakarnaattam" title="Pakarnaattam">
                 Documentaion on theyyam
               </ListItem>
             </ul>

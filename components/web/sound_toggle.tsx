@@ -6,9 +6,14 @@ import { Volume2, VolumeX } from "lucide-react";
 type SoundToggleProps = {
   file: string;
   volume?: number;
+  className?: string;
 };
 
-export default function SoundToggle({ file, volume = 1 }: SoundToggleProps) {
+export default function SoundToggle({
+  file,
+  volume = 1,
+  className = "",
+}: SoundToggleProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isMuted, setIsMuted] = useState(false);
 
@@ -19,34 +24,15 @@ export default function SoundToggle({ file, volume = 1 }: SoundToggleProps) {
     audio.volume = volume;
     audio.loop = true;
 
-    const navigationEntries = performance.getEntriesByType(
-      "navigation",
-    ) as PerformanceNavigationTiming[];
-
-    const navType = navigationEntries[0]?.type;
-
-    if (navType === "reload") {
-      audio.muted = true;
-      setIsMuted(true);
-    } else {
-      audio.muted = false;
-      audio.play().catch(() => {});
-      setIsMuted(false);
-    }
+    audio.play().catch(() => {});
   }, [volume]);
 
   const toggleSound = () => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    if (isMuted) {
-      audio.muted = false;
-      audio.play().catch(() => {});
-      setIsMuted(false);
-    } else {
-      audio.muted = true;
-      setIsMuted(true);
-    }
+    audio.muted = !audio.muted;
+    setIsMuted(audio.muted);
   };
 
   return (
@@ -56,7 +42,7 @@ export default function SoundToggle({ file, volume = 1 }: SoundToggleProps) {
       <button
         aria-label="Toggle Sound"
         onClick={toggleSound}
-        className="absolute right-4 top-4 cursor-pointer transition hover:scale-110"
+        className={`cursor-pointer transition hover:scale-110 ${className}`}
         type="button"
       >
         {isMuted ? <VolumeX /> : <Volume2 />}

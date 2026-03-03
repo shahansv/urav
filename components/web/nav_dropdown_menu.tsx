@@ -65,10 +65,10 @@ export function NavDropdownMenu() {
             <DropdownMenuSubTrigger>Initiatives</DropdownMenuSubTrigger>
             <DropdownMenuPortal>
               <DropdownMenuSubContent>
-                <Link href="/pakarnatam">
+                <Link href="/initiative/pakarnaattam">
                   <DropdownMenuItem>
                     <div>
-                      <div className="font-semibold">Pakarnatam</div>
+                      <div className="font-semibold">Pakarnaattam</div>
                       <div className="text-neutral-500">
                         (Documentaion on theyyam)
                       </div>
