@@ -64,7 +64,7 @@ export default function MapDot({
       onMouseLeave={() => setIsHovered(false)}
     >
       <motion.div
-        className="w-14 h-14 rounded-full cursor-pointer bg-amber-300/10"
+        className="w-14 h-14 rounded-full cursor-pointer"
         whileHover={{ scale: 1.3 }}
         transition={{ type: "spring", stiffness: 300 }}
       />
