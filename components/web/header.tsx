@@ -27,7 +27,7 @@ export function Header() {
       className="sticky top-0 z-50 w-full bg-[#F5F2E9]"
     >
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-12"
         aria-label="Main Navigation"
       >
         <Link

@@ -35,7 +35,7 @@ export default function MapDot({ top, left, image, title, desc }: MapDotProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 12 }}
             transition={{ duration: 0.25 }}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 w-60 text-white rounded-lg shadow-xl p-3 z-50 backdrop-blur-sm"
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 w-60 text-white rounded-lg shadow-xl p-3 z-50 bg-black "
           >
             <div className="mb-2">
               <Image

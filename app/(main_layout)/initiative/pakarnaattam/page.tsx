@@ -52,21 +52,14 @@ export default function PakarnaattamPage() {
           aria-label="Pakarnattam performance artwork"
           aria-describedby="pakarnattam-description"
         >
-          <div className="relative w-full h-[50vh] sm:h-[70vh] lg:h-[80vh]">
-            <Image
-              src="/pakarnaattam.png"
-              alt="Pakarnattam performance artwork"
-              fill
-              priority
-              sizes="
-                (max-width: 640px) 100vw,
-                (max-width: 1024px) 90vw,
-                1200px
-              "
-              className="object-contain sm:object-cover"
-              style={{ objectPosition: "center" }}
-            />
-          </div>
+          <Image
+            src="/pakarnaattam.png"
+            alt="Pakarnattam performance artwork"
+            width={1200} 
+            height={800} 
+            priority
+            className="w-full h-auto object-cover"
+          />
 
           <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 w-full flex justify-center">
             <div className="flex justify-center text-center px-4">
