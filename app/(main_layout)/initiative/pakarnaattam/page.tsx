@@ -54,7 +54,7 @@ export default function PakarnaattamPage() {
         >
           <div className="relative w-full h-[50vh] sm:h-[70vh] lg:h-[80vh]">
             <Image
-              src="https://ik.imagekit.io/shahansv/Urav/pakarnattam.png"
+              src="/pakarnaattam.png"
               alt="Pakarnattam performance artwork"
               fill
               priority
