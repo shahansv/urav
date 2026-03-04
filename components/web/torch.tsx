@@ -1,68 +1,43 @@
 "use client";
 
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  useMotionTemplate,
-} from "motion/react";
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
-export default function Torch() {
+interface TorchProps {
+  target?: { x: number; y: number } | null;
+}
+
+export default function Torch({ target }: TorchProps) {
   const torchRef = useRef<HTMLDivElement>(null);
-
-  const rawRotate = useMotionValue(0);
-
-  const rotate = useSpring(rawRotate, {
-    stiffness: 160,
-    damping: 26,
-    mass: 1.6,
-  });
-
-  const rotateTemplate = useMotionTemplate`${rotate}deg`;
-
-  const previousAngle = useRef(0);
+  const [angle, setAngle] = useState(0);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!torchRef.current) return;
+    if (!torchRef.current || !target) {
+      setAngle(0); 
+      return;
+    }
 
-      const rect = torchRef.current.getBoundingClientRect();
+    const rect = torchRef.current.getBoundingClientRect();
+    const pivotX = rect.left + rect.width / 2;
+    const pivotY = rect.bottom;
 
-      const pivotX = rect.left + rect.width / 2;
-      const pivotY = rect.bottom;
+    const dx = target.x - pivotX;
+    const dy = target.y - pivotY;
 
-      const dx = e.clientX - pivotX;
-      const dy = e.clientY - pivotY;
-
-      let angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
-
-      const diff = angle - previousAngle.current;
-
-      if (diff > 180) {
-        angle -= 360;
-      } else if (diff < -180) {
-        angle += 360;
-      }
-
-      previousAngle.current = angle;
-      rawRotate.set(angle);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [rawRotate]);
+    let newAngle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
+    setAngle(newAngle);
+  }, [target]);
 
   return (
     <div className="fixed -bottom-45 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
-      <motion.div
+      <div
         ref={torchRef}
         style={{
-          rotate: rotateTemplate,
+          transform: `rotate(${angle}deg)`,
           transformOrigin: "50% 100%",
+          transition: "transform 0.2s ease-out", 
         }}
-        className="relative w-125 h-190" 
+        className="relative w-125 h-190"
       >
         <Image
           src="https://ik.imagekit.io/shahansv/Urav/torch.png?updatedAt=1772385360191"
@@ -71,7 +46,7 @@ export default function Torch() {
           priority
           className="object-contain"
         />
-      </motion.div>
+      </div>
     </div>
   );
 }

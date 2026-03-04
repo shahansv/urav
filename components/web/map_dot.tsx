@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "motion/react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 
 type Position =
@@ -21,6 +20,7 @@ interface MapDotProps {
   title: string;
   desc: string;
   position?: Position;
+  onHover?: (coords: { x: number; y: number } | null) => void;
 }
 
 export default function MapDot({
@@ -30,68 +30,62 @@ export default function MapDot({
   title,
   desc,
   position = "top",
+  onHover,
 }: MapDotProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const dotRef = useRef<HTMLDivElement>(null);
 
   const positionClasses: Record<Position, string> = {
     top: "bottom-10 left-1/2 -translate-x-1/2",
     bottom: "top-10 left-1/2 -translate-x-1/2",
     left: "right-10 top-1/2 -translate-y-1/2",
     right: "left-10 top-1/2 -translate-y-1/2",
-
     "top-left": "bottom-5 right-18",
     "top-right": "bottom-5 left-10",
     "bottom-left": "top-10 right-10",
     "bottom-right": "-top-20 left-1",
   };
-  const animationOffset: Record<Position, any> = {
-    top: { y: 12 },
-    bottom: { y: -12 },
-    left: { x: 12 },
-    right: { x: -12 },
 
-    "top-left": { x: 12, y: 12 },
-    "top-right": { x: -12, y: 12 },
-    "bottom-left": { x: 12, y: -12 },
-    "bottom-right": { x: -12, y: -12 },
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    if (dotRef.current && onHover) {
+      const rect = dotRef.current.getBoundingClientRect();
+      onHover({ x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    if (onHover) onHover(null);
   };
 
   return (
     <div
+      ref={dotRef}
       className="absolute"
       style={{ top, left }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      <motion.div
-        className="w-14 h-14 rounded-full cursor-pointer"
-        whileHover={{ scale: 1.3 }}
-        transition={{ type: "spring", stiffness: 300 }}
-      />
+      <div className="w-14 h-14 rounded-full cursor-pointer " />
 
-      <AnimatePresence>
-        {isHovered && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, ...animationOffset[position] }}
-            animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, ...animationOffset[position] }}
-            transition={{ duration: 0.25 }}
-            className={`absolute w-80 text-white rounded-lg shadow-xl p-3 z-50 ${positionClasses[position]}`}
-          >
-            <div className="mb-2">
-              <Image
-                src={image}
-                alt={title}
-                width={400}
-                height={300}
-                className="rounded-md w-full h-auto"
-              />
-            </div>
-            <p className="text-sm font-semibold">{title}</p>
-            <p className="text-sm text-neutral-300">{desc}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isHovered && (
+        <div
+          className={`absolute w-80 text-white rounded-lg shadow-xl p-3 z-50 ${positionClasses[position]}`}
+        >
+          <div className="mb-2">
+            <Image
+              src={image}
+              alt={title}
+              width={400}
+              height={300}
+              className="rounded-md w-full h-auto"
+            />
+          </div>
+          <p className="text-sm font-semibold">{title}</p>
+          <p className="text-sm text-neutral-300">{desc}</p>
+        </div>
+      )}
     </div>
   );
 }

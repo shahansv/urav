@@ -6,8 +6,14 @@ import { Home } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import Torch from "@/components/web/torch";
+import { useState } from "react";
 
 export default function PakarnaattamMapPage() {
+  const [torchTarget, setTorchTarget] = useState<{
+    x: number;
+    y: number;
+  } | null>(null);
+
   return (
     <div className="relative w-screen h-screen overflow-hidden">
       <Image
@@ -17,6 +23,7 @@ export default function PakarnaattamMapPage() {
         priority
         className="object-cover"
       />
+
       <header className="absolute top-0 left-0 w-full px-6 py-6 z-20">
         <div className="flex items-center justify-between">
           <Link href="/initiative/pakarnaattam">
@@ -25,9 +32,11 @@ export default function PakarnaattamMapPage() {
           <SoundToggle file="/torch.mp3" />
         </div>
       </header>
+
       <p className="absolute top-24 w-full text-center text-white z-20 animate-pulse">
         Point the torch towards the dots to select
       </p>
+
       <Link href="/pakarnaattam/map/ritualforms">
         <MapDot
           top="57.5%"
@@ -36,6 +45,7 @@ export default function PakarnaattamMapPage() {
           title="Ritual Forms"
           desc="(Stories on, Six Theyyam Figures)"
           position="bottom-right"
+          onHover={setTorchTarget}
         />
       </Link>
 
@@ -47,6 +57,7 @@ export default function PakarnaattamMapPage() {
           title="Rhythms"
           desc="(Musical Elements of Theyyam)"
           position="top-left"
+          onHover={setTorchTarget}
         />
       </Link>
 
@@ -58,6 +69,7 @@ export default function PakarnaattamMapPage() {
           title="The Making"
           desc="(Paint, Costume, Ornaments Sacred Objects and Weapons)"
           position="top-right"
+          onHover={setTorchTarget}
         />
       </Link>
 
@@ -69,9 +81,11 @@ export default function PakarnaattamMapPage() {
           title="Human Behind the Deity"
           desc="(Socio-Cultural Life of Theyyam Artists)"
           position="left"
+          onHover={setTorchTarget}
         />
       </Link>
-      <Torch />
+
+      <Torch target={torchTarget} />
     </div>
   );
 }
