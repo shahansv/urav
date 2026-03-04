@@ -35,6 +35,7 @@ export default function PakarnaattamMapPage() {
           image="https://ik.imagekit.io/shahansv/Urav/RitualForms.png"
           title="Ritual Forms"
           desc="(Stories on, Six Theyyam Figures)"
+          position="bottom-right"
         />
       </Link>
 
@@ -45,6 +46,7 @@ export default function PakarnaattamMapPage() {
           image="https://ik.imagekit.io/shahansv/Urav/Rhythms.png"
           title="Rhythms"
           desc="(Musical Elements of Theyyam)"
+          position="top-left"
         />
       </Link>
 
@@ -55,6 +57,7 @@ export default function PakarnaattamMapPage() {
           image="https://ik.imagekit.io/shahansv/Urav/Making.png"
           title="The Making"
           desc="(Paint, Costume, Ornaments Sacred Objects and Weapons)"
+          position="top-right"
         />
       </Link>
 
@@ -65,6 +68,7 @@ export default function PakarnaattamMapPage() {
           image="https://ik.imagekit.io/shahansv/Urav/HumanBehindtheDeity.png"
           title="Human Behind the Deity"
           desc="(Socio-Cultural Life of Theyyam Artists)"
+          position="left"
         />
       </Link>
       <Torch />
