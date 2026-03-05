@@ -39,8 +39,8 @@ export default function PakarnaattamMapPage() {
 
       <Link href="/pakarnaattam/map/ritualforms">
         <MapDot
-          top="57.5%"
-          left="10.5%"
+          top="55%"
+          left="9.5%"
           image="https://ik.imagekit.io/shahansv/Urav/RitualForms.png"
           title="Ritual Forms"
           desc="(Stories on, Six Theyyam Figures)"
@@ -51,8 +51,8 @@ export default function PakarnaattamMapPage() {
 
       <Link href="/pakarnaattam/map/rhythms">
         <MapDot
-          top="49%"
-          left="34%"
+          top="46.5%"
+          left="32.5%"
           image="https://ik.imagekit.io/shahansv/Urav/Rhythms.png"
           title="Rhythms"
           desc="(Musical Elements of Theyyam)"
@@ -63,8 +63,8 @@ export default function PakarnaattamMapPage() {
 
       <Link href="/pakarnaattam/map/making">
         <MapDot
-          top="40%"
-          left="57.7%"
+          top="37.5%"
+          left="56.5%"
           image="https://ik.imagekit.io/shahansv/Urav/Making.png"
           title="The Making"
           desc="(Paint, Costume, Ornaments Sacred Objects and Weapons)"
@@ -75,8 +75,8 @@ export default function PakarnaattamMapPage() {
 
       <Link href="/pakarnaattam/map/deity">
         <MapDot
-          top="69%"
-          left="83.5%"
+          top="67.5%"
+          left="82.5%"
           image="https://ik.imagekit.io/shahansv/Urav/HumanBehindtheDeity.png"
           title="Human Behind the Deity"
           desc="(Socio-Cultural Life of Theyyam Artists)"

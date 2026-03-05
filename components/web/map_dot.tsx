@@ -67,7 +67,7 @@ export default function MapDot({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="w-14 h-14 rounded-full cursor-pointer bg-red-600/30 " />
+      <div className="w-24 h-24 rounded-full cursor-pointer bg-red-600/30 " />
 
       {isHovered && (
         <div
