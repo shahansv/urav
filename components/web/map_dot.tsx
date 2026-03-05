@@ -67,7 +67,7 @@ export default function MapDot({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="w-14 h-14 rounded-full cursor-pointer " />
+      <div className="w-14 h-14 rounded-full cursor-pointer bg-red-600/30 " />
 
       {isHovered && (
         <div
@@ -82,8 +82,11 @@ export default function MapDot({
               className="rounded-md w-full h-auto"
             />
           </div>
-          <p className="text-sm font-semibold">{title}</p>
-          <p className="text-sm text-neutral-300">{desc}</p>
+
+          <p className="text-sm font-semibold text-shadow-lg">{title}</p>
+          <p className="text-sm text-neutral-100 text-shadow-black text-shadow-lg">
+            {desc}
+          </p>
         </div>
       )}
     </div>

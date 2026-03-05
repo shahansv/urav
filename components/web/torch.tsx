@@ -24,7 +24,7 @@ export default function Torch({ target }: TorchProps) {
     const dx = target.x - pivotX;
     const dy = target.y - pivotY;
 
-    let newAngle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
+    let newAngle = Math.atan2(dy, dx) * (180 / Math.PI) + 95;
     setAngle(newAngle);
   }, [target]);
 
@@ -35,12 +35,13 @@ export default function Torch({ target }: TorchProps) {
         style={{
           transform: `rotate(${angle}deg)`,
           transformOrigin: "50% 100%",
-          transition: "transform 0.2s ease-out", 
+          transition: "transform 0.2s ease-out",
         }}
-        className="relative w-125 h-190"
+        className="relative w-225 h-290"
       >
         <Image
-          src="https://ik.imagekit.io/shahansv/Urav/torch.png?updatedAt=1772385360191"
+          // src="https://ik.imagekit.io/shahansv/Urav/torch.png?updatedAt=1772385360191"
+          src="/torchsvg.svg"
           alt="Torch"
           fill
           priority

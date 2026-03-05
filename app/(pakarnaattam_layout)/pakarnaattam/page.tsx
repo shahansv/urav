@@ -22,14 +22,15 @@ export default function ViewPakarnaattamPage() {
         Click on the torch to continue
       </p>
 
-      <div className="absolute bottom-32 lg:bottom-0 right-0 w-45 sm:w-62.5 md:w-87.5 lg:w-125 rotate-[-40deg] cursor-pointer">
+      <div className="absolute bottom-32 lg:bottom-0 right-0 w-45 sm:w-62.5 md:w-87.5 lg:w-250 rotate-[-40deg] cursor-pointer">
         <Link href={"/pakarnaattam/character"}>
           <Image
-            src="https://ik.imagekit.io/shahansv/Urav/torch.png?updatedAt=1772385360191"
+            // src="https://ik.imagekit.io/shahansv/Urav/torch.png?updatedAt=1772385360191"
+            src="/torchsvg.svg"
             alt="torch"
             priority
-            width={2048}
-            height={2048}
+            width={3048}
+            height={3048}
             className="w-full h-auto object-contain hover:animate-pulse"
           />
         </Link>
