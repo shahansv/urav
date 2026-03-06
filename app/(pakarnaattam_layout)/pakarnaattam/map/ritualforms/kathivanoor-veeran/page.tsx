@@ -29,7 +29,7 @@ export default function PakarnaattamKathivanoorPage() {
             </Link>
           </div>
 
-          <SoundToggle file="/torch.mp3" />
+          <SoundToggle file="/storybg.mpeg" volume={0.8} />
         </div>
       </header>
 
