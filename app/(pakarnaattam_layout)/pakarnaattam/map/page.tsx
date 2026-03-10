@@ -1,8 +1,6 @@
 "use client";
 
 import MapDot from "@/components/web/map_dot";
-import SoundToggle from "@/components/web/sound_toggle";
-import { Home } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import Torch from "@/components/web/torch";
@@ -23,15 +21,6 @@ export default function PakarnaattamMapPage() {
         priority
         className="object-cover"
       />
-
-      <header className="absolute top-0 left-0 w-full px-6 py-6 z-20">
-        <div className="flex items-center justify-between">
-          <Link href="/initiative/pakarnaattam">
-            <Home className="cursor-pointer text-white transition hover:scale-110" />
-          </Link>
-          <SoundToggle file="/torch.mp3" />
-        </div>
-      </header>
 
       <p className="absolute top-24 w-full text-center text-white z-20 animate-pulse">
         Point the torch towards the dots to select

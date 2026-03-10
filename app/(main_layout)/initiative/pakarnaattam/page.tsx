@@ -47,7 +47,7 @@ export default function PakarnaattamPage() {
         </h1>
 
         <figure
-          className="relative w-full overflow-hidden rounded-2xl bg-black shadow-sm"
+          className="relative w-full overflow-hidden rounded-2xl shadow-sm"
           role="img"
           aria-label="Pakarnattam performance artwork"
           aria-describedby="pakarnattam-description"
@@ -55,8 +55,8 @@ export default function PakarnaattamPage() {
           <Image
             src="/pakarnaattam.png"
             alt="Pakarnattam performance artwork"
-            width={1200} 
-            height={800} 
+            width={1200}
+            height={800}
             priority
             className="w-full h-auto object-cover"
           />
@@ -79,88 +79,66 @@ export default function PakarnaattamPage() {
         <article
           id="pakarnattam-description"
           ref={descriptionRef}
-          className={`mt-12 sm:mt-16 max-w-4xl mx-auto leading-relaxed text-base sm:text-lg space-y-6 transition-colors duration-700 ${
+          className={`mt-12 sm:mt-16 max-w-7xl mx-auto leading-relaxed text-base sm:text-lg space-y-6 transition-colors duration-700 ${
             darkBg ? "text-white" : "text-neutral-800"
           }`}
         >
+          <h1 className=" py-4 text-4xl font-semibold">
+            What Pakarnaattam is...
+          </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-            nulla in impedit consectetur, quibusdam explicabo commodi, sunt
-            nemo, animi neque dolorem! Eaque, quam! Quos perspiciatis, dicta
-            quod fugiat eum tempora enim, rerum deserunt voluptas natus rem
-            vitae aliquid necessitatibus reiciendis eligendi repellendus
-            distinctio eius accusamus voluptatibus corrupti?
+            Pakarnattam is an illustrated documentation project that explores
+            the cultural and artistic world of Theyyam, a ritual performance
+            tradition practiced in the northern regions of Kerala. Deeply rooted
+            in local belief systems, oral histories, and community
+            participation, Theyyam stands as one of the most powerful ritual art
+            forms in South India. It exists at the intersection of performance,
+            spirituality, storytelling, and visual culture.
           </p>
 
           <p>
-            Cupiditate, voluptates quasi nobis dolor exercitationem quas tempore
-            minus ducimus deleniti ipsam, dolore earum? Enim minus explicabo
-            fugit placeat molestias impedit dignissimos, reprehenderit
-            consectetur id corporis similique rerum earum molestiae!
+            The word Pakarnattam refers to transformation through performance.
+            The term combines pakarnam, which suggests becoming or embodying
+            another form, and attam, meaning play, dance, or enactment. Within
+            the context of Theyyam, this idea of transformation lies at the
+            heart of the ritual. Through elaborate costume, ritual preparation,
+            music, and devotion, the performer moves beyond the identity of an
+            individual and embodies a divine or ancestral presence. This
+            transformation is not merely theatrical but deeply embedded in
+            belief, tradition, and collective memory.
           </p>
 
           <p>
-            Nostrum eligendi cupiditate recusandae quod. Laborum, consectetur
-            id! Natus harum ab aspernatur illo asperiores consequuntur quidem,
-            cum eos quibusdam fugit qui at aliquid cumque ipsum maxime porro
-            saepe autem rerum provident.
+            While Theyyam is often recognised for its striking visual spectacle
+            the vibrant face paintings, towering headgear, and elaborate
+            costumes the art form is built upon a much deeper network of
+            stories, sounds, symbols, and lived experiences. Pakarnattam seeks
+            to explore these layers through illustration and visual
+            interpretation, offering a perspective that looks beyond the
+            spectacle and into the many elements that construct the world of
+            Theyyam.The project follows a non-linear approach, allowing viewers
+            to engage with different aspects of the tradition as interconnected
+            dimensions rather than as a single chronological narrative. Each
+            section of the project acts as a window into a different layer of
+            the art form, revealing how mythology, visual identity, sound
+            traditions, and human experience come together within the ritual.
           </p>
 
           <p>
-            Dolore qui delectus corporis excepturi officiis ut reprehenderit
-            rerum repellendus impedit distinctio numquam autem quod, ab
-            assumenda accusantium velit quasi, libero voluptatem nemo sequi quia
-            omnis? Repellat, nulla.
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-            nulla in impedit consectetur, quibusdam explicabo commodi, sunt
-            nemo, animi neque dolorem! Eaque, quam! Quos perspiciatis, dicta
-            quod fugiat eum tempora enim.
-          </p>
-          <p>
-            Cupiditate, voluptates quasi nobis dolor exercitationem quas tempore
-            minus ducimus deleniti ipsam, dolore earum? Enim minus explicabo
-            fugit placeat molestias impedit dignissimos, reprehenderit
-            consectetur id corporis similique rerum earum molestiae!
-          </p>
-
-          <p>
-            Nostrum eligendi cupiditate recusandae quod. Laborum, consectetur
-            id! Natus harum ab aspernatur illo asperiores consequuntur quidem,
-            cum eos quibusdam fugit qui at aliquid cumque ipsum maxime porro
-            saepe autem rerum provident.
-          </p>
-
-          <p>
-            Dolore qui delectus corporis excepturi officiis ut reprehenderit
-            rerum repellendus impedit distinctio numquam autem quod, ab
-            assumenda accusantium velit quasi, libero voluptatem nemo sequi quia
-            omnis? Repellat, nulla.
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-            nulla in impedit consectetur, quibusdam explicabo commodi, sunt
-            nemo, animi neque dolorem! Eaque, quam! Quos perspiciatis, dicta
-            quod fugiat eum tempora enim.
-          </p>
-
-          <p>
-            Cupiditate, voluptates quasi nobis dolor exercitationem quas tempore
-            minus ducimus deleniti ipsam, dolore earum? Enim minus explicabo
-            fugit placeat molestias impedit dignissimos.
-          </p>
-
-          <p>
-            Nostrum eligendi cupiditate recusandae quod. Laborum, consectetur
-            id! Natus harum ab aspernatur illo asperiores consequuntur quidem.
-          </p>
-
-          <p>
-            Dolore qui delectus corporis excepturi officiis ut reprehenderit
-            rerum repellendus impedit distinctio numquam autem quod.
+            The project also reflects on the lives of the performers who
+            dedicate themselves to sustaining this tradition. For many artists,
+            Theyyam is not simply a performance practice but a lineage passed
+            down through generations. Their lives involve rigorous preparation,
+            inherited knowledge, and a deep sense of responsibility toward the
+            ritual and the communities they serve. By acknowledging the human
+            presence behind the spectacle, the project highlights the devotion,
+            discipline, and continuity that keep the tradition alive.
+            <br className="hidden sm:block" />
+            Through the language of illustration, design, and documentation,
+            Pakarnattam attempts to create an immersive visual experience that
+            invites viewers to engage with the world behind Theyyam. Each
+            illustration acts as a point of entry into the tradition, revealing
+            fragments of story, symbolism, sound, and lived experience.
           </p>
         </article>
       </section>

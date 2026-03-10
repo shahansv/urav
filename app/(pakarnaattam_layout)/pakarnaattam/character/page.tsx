@@ -1,13 +1,47 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import ScrollButton from "@/components/web/scroll_button";
 import SoundToggle from "@/components/web/sound_toggle";
 import { Home } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
+import { useRouter } from "next/navigation";
 
 export default function PakarnaattamCharacterPage() {
+  const [activeCharacter, setActiveCharacter] = useState<string | null>(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const hasHover = window.matchMedia(
+      "(hover: hover) and (pointer: fine)",
+    ).matches;
+    setIsTouchDevice(!hasHover);
+  }, []);
+
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    character: string,
+  ) => {
+    if (!isTouchDevice) return;
+
+    e.preventDefault();
+
+    setActiveCharacter(character);
+
+    const route =
+      character === "kannan"
+        ? "/pakarnaattam/character/kannan"
+        : "/pakarnaattam/character/neelu";
+
+    setTimeout(() => {
+      router.push(route);
+    }, 800);
+  };
+
   return (
     <main className="min-h-screen flex flex-col">
       <header className="w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
@@ -15,6 +49,7 @@ export default function PakarnaattamCharacterPage() {
           <Link href="/initiative/pakarnaattam">
             <Home className="cursor-pointer transition hover:scale-110" />
           </Link>
+
           <div className="flex items-center justify-between">
             <SoundToggle file="/torch.mp3" />
           </div>
@@ -87,7 +122,7 @@ export default function PakarnaattamCharacterPage() {
             I'll take you through the world of theyyam,” Grandmother replied.
           </p>
 
-          <p>She continued, her voice steady and vivid...... </p>
+          <p>She continued, her voice steady and vivid......</p>
         </div>
 
         <div className="w-full min-h-screen flex items-center justify-center py-12">
@@ -97,19 +132,19 @@ export default function PakarnaattamCharacterPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-between gap-12 sm:gap-20 w-full">
-              <Link href="/pakarnaattam/map">
+              <Link
+                href="/pakarnaattam/character/kannan"
+                onClick={(e) => handleClick(e, "kannan")}
+              >
                 <motion.div
                   className="flex flex-col items-center gap-4 cursor-pointer"
                   initial="rest"
                   whileHover="hover"
-                  animate="rest"
+                  animate={activeCharacter === "kannan" ? "hover" : "rest"}
                 >
                   <div className="relative w-64 h-96 sm:w-72 sm:h-112 md:w-80 md:h-128">
                     <motion.div
-                      variants={{
-                        rest: { opacity: 1 },
-                        hover: { opacity: 0 },
-                      }}
+                      variants={{ rest: { opacity: 1 }, hover: { opacity: 0 } }}
                       transition={{ duration: 0.4 }}
                       className="absolute inset-0"
                     >
@@ -123,10 +158,7 @@ export default function PakarnaattamCharacterPage() {
                     </motion.div>
 
                     <motion.div
-                      variants={{
-                        rest: { opacity: 0 },
-                        hover: { opacity: 1 },
-                      }}
+                      variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
                       transition={{ duration: 0.4 }}
                       className="absolute inset-0"
                     >
@@ -153,19 +185,19 @@ export default function PakarnaattamCharacterPage() {
                 </motion.div>
               </Link>
 
-              <Link href="/pakarnaattam/map">
+              <Link
+                href="/pakarnaattam/character/neelu"
+                onClick={(e) => handleClick(e, "neelu")}
+              >
                 <motion.div
                   className="flex flex-col items-center gap-4 cursor-pointer"
                   initial="rest"
                   whileHover="hover"
-                  animate="rest"
+                  animate={activeCharacter === "neelu" ? "hover" : "rest"}
                 >
                   <div className="relative w-64 h-96 sm:w-72 sm:h-112 md:w-80 md:h-128">
                     <motion.div
-                      variants={{
-                        rest: { opacity: 1 },
-                        hover: { opacity: 0 },
-                      }}
+                      variants={{ rest: { opacity: 1 }, hover: { opacity: 0 } }}
                       transition={{ duration: 0.4 }}
                       className="absolute inset-0"
                     >
@@ -179,10 +211,7 @@ export default function PakarnaattamCharacterPage() {
                     </motion.div>
 
                     <motion.div
-                      variants={{
-                        rest: { opacity: 0 },
-                        hover: { opacity: 1 },
-                      }}
+                      variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
                       transition={{ duration: 0.4 }}
                       className="absolute inset-0"
                     >
@@ -212,6 +241,7 @@ export default function PakarnaattamCharacterPage() {
           </div>
         </div>
       </article>
+
       <ScrollButton isDarkBackground={true} />
     </main>
   );
