@@ -83,7 +83,7 @@ export default function PakarnaattamPage() {
             darkBg ? "text-white" : "text-neutral-800"
           }`}
         >
-          <h1 className=" py-4 text-4xl font-semibold">
+          <h1 className=" py-4 text-3xl sm:text-4xl md:text-5xl tracking-tight font-semibold">
             What Pakarnaattam is...
           </h1>
           <p>

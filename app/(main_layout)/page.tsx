@@ -1,30 +1,42 @@
+import { Carousel } from "@/components/web/carousel";
 import ScrollButton from "@/components/web/scroll_button";
+import { EB_Garamond } from "next/font/google";
+
+const garamond = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-12 py-6 sm:py-8 md:py-12 text-neutral-600 space-y-6">
-      <p className="text-sm sm:text-base md:text-lg leading-relaxed">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt fugit,
-        inventore tenetur pariatur accusamus eum perferendis saepe est
-        aspernatur quibusdam, delectus, corrupti facere commodi? Voluptatibus
-        voluptas temporibus veniam perferendis maxime. Libero consequuntur quis
-        quos. Hic nulla nihil eaque ex eveniet nisi et, iste incidunt velit
-        tempora, nemo, molestiae recusandae laudantium voluptas. Facilis sint
-        iusto eveniet ipsam, dolor in et accusamus doloribus, molestias officia
-        distinctio. Cum voluptatem tempora nostrum excepturi possimus qui, nihil
-        temporibus consequuntur obcaecati inventore delectus consectetur saepe
-        corporis. Ad cupiditate impedit ipsa dignissimos sint aut illum minima
-        magnam sunt adipisci nulla quo voluptatem repudiandae nisi debitis,
-        atque est, cessitatibus sequi sapiente facere rerum, quod eligendi
-        commodi consequatur deleniti soluta. Architecto ratione quam adipisci
-        maxime odio distinctio fac
-      </p>
-
-      <p className="text-sm sm:text-base md:text-lg leading-relaxed">
-        Quidem eaque rem reprehenderit eligendi architecto vel aliquid ...
-      </p>
-
+    <main className="text-neutral-100 ">
       <ScrollButton isDarkBackground={true} />
+      <div className="flex-1 mx-auto w-full max-w-5xl text-3xl px-4 sm:px-6 lg:px-16 mt-8 ">
+        <h1 className={garamond.className}>
+          Replenishing roots drawn from....{" "}
+        </h1>
+      </div>
+      <Carousel />
+      <article className="flex-1 mx-auto w-full max-w-3xl px-4 sm:px-6 lg:px-16 mt-8 ">
+        <div className="space-y-5 sm:space-y-6 md:space-y-8 ">
+          <p>
+            A space that helps in reconnecting people with their cultural and
+            traditional roots, and connects the gap between tradition and
+            modernity, reimagining narratives through digital storytelling.
+            <br className="hidden sm:block" />
+            Calm, honest, and human in its approach, Urav remains deeply
+            grounded in heritage while staying open to reinterpretation.
+          </p>
+          <p>
+            Drawn to projects that blend heritage with contemporary design, it
+            resonates deeply with Urav's vision.For fellow humans who seek
+            cultural knowledge and crave meaningful digital experiences that
+            connect them to living traditions. Together, we form a community
+            that doesn't just consume culture we engage with it, reflect on it,
+            and keep it alive.
+          </p>
+        </div>
+      </article>
     </main>
   );
 }
