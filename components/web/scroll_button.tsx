@@ -36,7 +36,7 @@ export default function ScrollButton({ isDarkBackground }: ScrollButtonProps) {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
+    document.documentElement.scrollTo({
       top: 0,
       behavior: "smooth",
     });
@@ -50,7 +50,7 @@ export default function ScrollButton({ isDarkBackground }: ScrollButtonProps) {
   const dashOffset = useTransform(progress, [0, 1], [circumference, 0]);
 
   return (
-    <div className="fixed bottom-6 right-6">
+    <div className="fixed bottom-6 right-6 z-50">
       <AnimatePresence mode="wait">
         {atTop ? (
           <motion.div
@@ -59,19 +59,24 @@ export default function ScrollButton({ isDarkBackground }: ScrollButtonProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.3 }}
-            className="px-4 py-2 text-neutral-100 rounded-full flex items-center gap-2"
+            className="px-4 py-2 rounded-full flex items-center gap-2"
           >
             <span
-              className={`text-sm ${isDarkBackground ? "text-neutral-100" : "text-neutral-900"}`}
+              className={`text-sm ${
+                isDarkBackground ? "text-neutral-100" : "text-neutral-900"
+              }`}
             >
               Scroll to see more
             </span>
+
             <motion.div
               animate={{ y: [0, 6, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
             >
               <ArrowDown
-                className={`text-sm w-4 h-4 ${isDarkBackground ? "text-neutral-100" : "text-neutral-900"}`}
+                className={`w-4 h-4 ${
+                  isDarkBackground ? "text-neutral-100" : "text-neutral-900"
+                }`}
               />
             </motion.div>
           </motion.div>
@@ -86,7 +91,7 @@ export default function ScrollButton({ isDarkBackground }: ScrollButtonProps) {
             transition={{ duration: 0.25 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="relative flex cursor-pointer items-center justify-center w-11 h-11 rounded-full bg-neutral-900 text-white"
+            className="relative flex items-center justify-center w-12 h-12 rounded-full bg-neutral-900 text-white"
           >
             <svg width={size} height={size} className="absolute -rotate-90">
               <circle

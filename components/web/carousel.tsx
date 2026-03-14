@@ -16,6 +16,9 @@ const slides = [
   { src: "/carousel-img1.jpg", title: "Living traditions" },
   { src: "/carousel-img2.jpg", title: "Cultural narratives" },
   { src: "/carousel-img3.jpg", title: "Communities" },
+  { src: "/carousel-img4.jpg", title: "Communities" },
+  { src: "/carousel-img5.jpg", title: "Communities" },
+  { src: "/carousel-img6.jpg", title: "Communities" },
 ];
 
 export const Carousel: React.FC = (): JSX.Element => {
@@ -136,7 +139,7 @@ export const Carousel: React.FC = (): JSX.Element => {
 
               {position === "center" && (
                 <>
-                  <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/10 to-transparent rounded-2xl" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/40 via-black/10 to-transparent rounded-2xl" />
 
                   <div
                     className={`absolute bottom-6 left-6 text-white text-3xl md:text-4xl font-light ${garamond.className}`}
