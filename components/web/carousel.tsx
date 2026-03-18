@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, JSX } from "react";
+import React, { useState, useEffect, useRef, JSX } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { EB_Garamond } from "next/font/google";
@@ -24,23 +24,56 @@ const slides = [
 export const Carousel: React.FC = (): JSX.Element => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [containerHeight, setContainerHeight] = useState(400);
 
-  const containerHeight = 400;
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
   const gap = 5;
-
   const slideDuration = 0.45;
   const autoplayDelay = 3000;
 
-  const next = () => setCurrentIndex((prev) => (prev + 1) % slides.length);
-
-  const prev = () =>
-    setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
+  const startAutoplay = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % slides.length);
+    }, autoplayDelay);
+  };
 
   useEffect(() => {
-    if (paused) return;
+    const updateHeight = () => {
+      if (window.innerWidth < 640) return setContainerHeight(250);
+      if (window.innerWidth < 1024) return setContainerHeight(320);
+      setContainerHeight(400);
+    };
 
-    const interval = setInterval(next, autoplayDelay);
-    return () => clearInterval(interval);
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
+
+  const isMobile = containerHeight <= 250;
+
+  const next = () => {
+    setCurrentIndex((prev) => (prev + 1) % slides.length);
+    startAutoplay();
+  };
+
+  const prev = () => {
+    setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
+    startAutoplay();
+  };
+
+  useEffect(() => {
+    if (paused) {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      return;
+    }
+
+    startAutoplay();
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
   }, [paused]);
 
   const getPosition = (index: number): Position => {
@@ -56,32 +89,29 @@ export const Carousel: React.FC = (): JSX.Element => {
 
   const positionStyles: Record<Position, any> = {
     left: {
-      left: "0%",
-      width: `calc(25% - ${gap}px)`,
-      height: containerHeight / 2,
-      top: 0,
+      left: isMobile ? "-40%" : "0%",
+      width: isMobile ? "80%" : `calc(25% - ${gap}px)`,
+      height: isMobile ? containerHeight * 0.7 : containerHeight / 2,
+      top: isMobile ? containerHeight * 0.15 : 0,
       zIndex: 10,
-      opacity: 1,
+      opacity: isMobile ? 0.5 : 1,
     },
-
     center: {
-      left: `calc(25% + ${gap}px)`,
-      width: `calc(50% - ${gap * 2}px)`,
+      left: isMobile ? "10%" : `calc(25% + ${gap}px)`,
+      width: isMobile ? "80%" : `calc(50% - ${gap * 2}px)`,
       height: containerHeight,
       top: 0,
       zIndex: 20,
       opacity: 1,
     },
-
     right: {
-      left: `calc(75% + ${gap}px)`,
-      width: `calc(25% - ${gap}px)`,
-      height: containerHeight / 2,
-      top: containerHeight / 2,
+      left: isMobile ? "60%" : `calc(75% + ${gap}px)`,
+      width: isMobile ? "80%" : `calc(25% - ${gap}px)`,
+      height: isMobile ? containerHeight * 0.7 : containerHeight / 2,
+      top: isMobile ? containerHeight * 0.15 : containerHeight / 2,
       zIndex: 10,
-      opacity: 1,
+      opacity: isMobile ? 0.5 : 1,
     },
-
     hidden: {
       left: `calc(25% + ${gap}px)`,
       width: `calc(50% - ${gap * 2}px)`,
@@ -109,6 +139,7 @@ export const Carousel: React.FC = (): JSX.Element => {
             layout
             drag="x"
             dragElastic={0.12}
+            dragMomentum={false}
             dragConstraints={{ left: 0, right: 0 }}
             className="absolute cursor-grab active:cursor-grabbing"
             animate={positionStyles[position]}
@@ -124,6 +155,8 @@ export const Carousel: React.FC = (): JSX.Element => {
                 prev();
               } else if (offset < -80 || velocity < -500) {
                 next();
+              } else {
+                startAutoplay();
               }
             }}
           >
@@ -131,18 +164,17 @@ export const Carousel: React.FC = (): JSX.Element => {
               <Image
                 src={slide.src}
                 alt={`carousel-${index}`}
-                width={1000}
-                height={1000}
-                sizes="(max-width:768px) 100vw, 50vw"
-                className="object-cover rounded-2xl w-full h-full"
+                fill
+                sizes="(max-width: 640px) 100vw,
+                       (max-width: 1024px) 70vw,
+                       50vw"
+                className="object-cover rounded-2xl"
               />
-
               {position === "center" && (
                 <>
                   <div className="absolute inset-0 bg-linear-to-t from-black/40 via-black/10 to-transparent rounded-2xl" />
-
                   <div
-                    className={`absolute bottom-6 left-6 text-white text-3xl md:text-4xl font-light ${garamond.className}`}
+                    className={`absolute bottom-4 left-4 sm:bottom-6 sm:left-6 text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light ${garamond.className}`}
                   >
                     {slide.title}
                   </div>
