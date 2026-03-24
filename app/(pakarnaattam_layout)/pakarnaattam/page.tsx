@@ -24,11 +24,10 @@ export default function ViewPakarnaattamPage() {
         />
 
         <Image
-          src="/pakarnaattam-home-phone.png"
+          src="/Pakarnaattam-home-phone.png"
           alt="background mobile"
           fill
           priority
-          quality={100}
           sizes="100vw"
           className="object-cover lg:hidden"
         />
