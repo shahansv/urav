@@ -34,7 +34,7 @@ export default function PakarnaattamMakingPage() {
       <article className="relative z-10 flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-16">
         <div className="space-y-6 sm:space-y-8 sm:text-lg md:text-xl text-neutral-200 leading-relaxed">
           <Image
-            src="/Making1.png"
+            src="/Making1.jpg"
             alt="Kathivanoor Veeran Illustration"
             width={2048}
             height={1463}

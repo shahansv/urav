@@ -33,7 +33,7 @@ export default function Home() {
         <Carousel />
       </section>
 
-      <article className="mx-auto w-full max-w-7xl px-5 py-14 sm:px-6 sm:py-16 lg:px-12 lg:py-20 mt-8 sm:mt-10 lg:mt-14">
+      <article className="mx-auto w-full max-w-7xl px-5 py-10 lg:px-12 mt-8  ">
         <div className="space-y-5 sm:space-y-6 text-sm sm:text-base md:text-lg leading-relaxed">
           <p>
             A space that helps in reconnecting people with their cultural and
