@@ -29,7 +29,7 @@ export default function PakarnaattamKathivanoorPage() {
             </Link>
           </div>
 
-          <SoundToggle file="/storybg.mpeg" volume={0.8} />
+          <SoundToggle file="/Kathivanoor-veeran.mpeg" volume={0.8} />
         </div>
       </header>
 
@@ -40,102 +40,110 @@ export default function PakarnaattamKathivanoorPage() {
           </h1>
 
           <Image
-            src="https://ik.imagekit.io/shahansv/Urav/KathivanoorIllustration.png"
+            src="/kathivanoor-veeran1.png"
             alt="Kathivanoor Veeran Illustration"
             width={2048}
             height={1463}
             className="w-full h-auto"
             sizes="(max-width: 768px) 100vw, 1024px"
-            priority
           />
 
           <div className="space-y-5 sm:space-y-6 md:space-y-8 text-sm sm:text-base md:text-lg">
             <p>
-              Long ago, when forests were thicker than memory and village paths
-              were still traced by bare feet and cattle hooves, there lived a
-              young man named Kathivanoor Veeran. His real name was Mandhappan
-              Chekavar, born into a family of warriors in the northern lands of
-              Kerala. From childhood, he carried fire in his veins. He learned
-              kalari before he learned fear, mastered the sword before he
-              understood mercy, and grew up with stories of ancestors who
-              defended their soil with blood and honor.
+              Long ago, in a village called Mangad near Taliparamba, there lived
+              a couple named Kumarachan and Chakkiyamma. For many years they had
+              no children, and they prayed earnestly to their ancestral deity,
+              Chuzhali Bhagavathi. At last, their prayers were answered. A son
+              was born to them on the star Makam, and they named him Mandappan.
+              The elders believed the child was no ordinary boy some even said
+              he carried the spirit of a gandharva, sent to earth for a special
+              purpose. Mandappan grew up strong, fearless, and full of energy.
+              While other boys played ordinary games, Mandappan was fascinated
+              by weapons and martial skills. He trained tirelessly, mastering
+              the techniques of the warrior traditions of the land. But this
+              passion for weapons and adventure often worried his father, who
+              wished for him to settle into a responsible life and earn for the
+              family.
             </p>
-
             <p>
-              Mandhappan was not just skilled he was restless. The world beyond
-              his village called to him, and so he left home, traveling from
-              place to place, offering his service as a protector. Wherever
-              injustice rose, his blade followed. He fought thieves, subdued
-              violent chieftains, and guarded travelers through dangerous forest
-              routes. Slowly, his name began to spread. People spoke of a young
-              warrior who appeared when hope was thin, who fought not for riches
-              but for dignity.
+              One day, after a disagreement with his father, Mandappan left
+              home, determined to make his own destiny. Refusing to return, he
+              travelled and eventually reached a place called Kathivanoor in the
+              northern Malabar region. There, with the support of his relatives,
+              he began a new life. Through hard work and determination,
+              Mandappan transformed barren lands into fertile fields and built a
+              thriving life through farming and trade.
             </p>
-
             <p>
-              During his travels he reached Kathivanoor, where a local ruler
-              employed him as a guard. There, Mandhappan met a young woman and
-              fell deeply in love. For the first time, the wandering warrior
-              imagined a settled life a home, a family, peace after years of
-              battle. But destiny had other plans.The ruler of Kathivanoor grew
-              jealous of Mandhappan's rising popularity. Villagers admired the
-              warrior more than they feared their king. Whispers began to
-              circulate that Mandhappan was too powerful, too beloved, too
-              dangerous to be kept alive. The ruler's insecurity hardened into
-              betrayal.
+              As the years passed, Mandappan's courage and success became well
+              known. But success often brings jealousy. A rival chieftain named
+              Mutharmudi Kudakar began to see Mandappan as a threat. Despite
+              this tension, Mandappan's life seemed complete when he fell deeply
+              in love with a woman named Chemmarathi. They married and began a
+              joyful life together.
+              <br className="hidden sm:block" /> But fate had other plans.
             </p>
+          </div>
 
+          <Image
+            src="/kathivanoor-veeran2.png"
+            alt="Kathivanoor Veeran Illustration"
+            width={2048}
+            height={1463}
+            className="w-full h-auto"
+            sizes="(max-width: 768px) 100vw, 1024px"
+          />
+
+          <div className="space-y-5 sm:space-y-6 md:space-y-8 text-sm sm:text-base md:text-lg">
             <p>
-              One evening, Mandhappan was sent on what seemed like a routine
-              mission. He was asked to ride through the forest to retrieve a
-              horse. Trusting his employer, he went alone. Hidden among the
-              trees waited assassins, hired by the ruler himself. They attacked
-              from behind. Mandhappan fought fiercely, even while wounded,
-              cutting down several men. But betrayal cuts deeper than steel.
-              Surrounded and exhausted, he was finally slain.His body was left
-              in the forest, abandoned like an unwanted memory.Yet Mandhappan
-              did not die quietly.
-              <br className="hidden sm:block" />
-              Legend says the earth itself trembled at his unjust death. His
-              spirit rose, burning with rage and sorrow. He returned not as a
-              man, but as Kathivanoor Veeran, a fierce divine presence. He
-              confronted the ruler who had betrayed him and destroyed him.
-              Justice came swift and terrible. The oppressor fell, and balance
-              was restored. But Veeran's anger did not vanish with revenge. His
-              soul remained restless, wandering the land, protecting the
-              innocent, punishing cruelty, and watching over villages. The
-              people, terrified yet grateful, began worshipping him. They built
-              shrines. They lit lamps. They offered toddy, meat, and red cloth.
-              Slowly, the warrior transformed into a guardian deity.
+              One day, after Mandappan returned late from a journey, a
+              misunderstanding arose between the couple. Troubled by doubt and
+              anger, Chemmarathi treated him coldly and served him food filled
+              with tiny stones and strands of hair an ominous sign in local
+              belief. As Mandappan held the ball of rice, it split into two.
+              Seeing this, Chemmarathi uttered a chilling prediction: such a
+              sign meant a warrior's life would soon be cut short. Just then,
+              the distant cry of battle echoed through the land. It was the war
+              call of Mutharmudi Kudakar. For a warrior, such a call could never
+              be ignored. Mandappan rose immediately and rushed to the
+              battlefield.
             </p>
-
-            <p>And so he returns every year.</p>
-
             <p>
-              When Kathivanoor Veeran Theyyam is performed, it is not considered
-              a dance. It is believed that Mandhappan Chekavar himself enters
-              the body of the performer. The face paint burns red like spilled
-              blood. The crown rises high like flames. The sword flashes in
-              ritual fury. He moves with the urgency of a betrayed warrior,
-              circles the fire, blesses children, scolds wrongdoers, and listens
-              to prayers.
-              <br className="hidden sm:block" />
-              People approach him with trembling hands farmers seeking rain,
-              mothers seeking protection, youth seeking courage. And Veeran,
-              once a lonely traveler, now stands as their divine shield.
+              There he fought with unmatched bravery, using all the martial
+              skills he had mastered since childhood. One by one he defeated the
+              enemies before him. But when the battle seemed won, Mandappan
+              noticed something strange his ring finger, along with his wedding
+              ring, had been severed in the fight.A proud warrior like Mandappan
+              could not bear to return home without it. Rather than face
+              dishonour, he chose to return to the battlefield and reclaim his
+              lost honour.The enemy forces saw him return and attacked with
+              renewed fury. Surrounded on all sides, Mandappan fought like a
+              raging storm. Arrows rained upon him from every direction until
+              his body was pierced again and again. Legend says his body was
+              struck by countless arrows, breaking apart on the battlefield.
             </p>
-
+            <p> The earth turned red with the blood of the fearless warrior.</p>
             <p>
-              He is remembered not merely as a god, But as a man who suffered
-              injustice.
-              <br className="hidden sm:block" />A warrior who loved deeply.
-              <br className="hidden sm:block" /> A protector who was betrayed.
+              Back home, Chemmarathi soon learned of the tragedy. When
+              Mandappan's body was gathered and placed upon the funeral pyre,
+              grief consumed her heart. Unable to bear life without him, she
+              leapt into the flames, choosing to follow her husband in death.
+              But the story does not end there.... As the people left the
+              cremation ground the next day, they witnessed something
+              astonishing. Along the riverbank, they saw Mandappan and
+              Chemmarathi walking together, radiant and divine. The brave
+              warrior had transcended death and returned as a powerful spirit.
             </p>
-
             <p>
-              Kathivanoor Veeran remains a reminder that even ordinary humans,
-              when wronged beyond endurance, can rise into legend and that the
-              land never forgets those who die defending truth.
+              From that day onward, Mandappan was worshipped as Kathivanoor
+              Veeran—the fearless warrior of Kathivanoor who chose honour over
+              life itself.
+            </p>
+            <p>
+              Grandmother said softly, “And that is why, when Kathivanoor Veeran
+              appears as Theyyam, it is not just a dance. It is the story of a
+              brave man remembered by the people, a hero whose courage was so
+              great that he became a god.”
             </p>
           </div>
 
