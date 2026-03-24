@@ -27,7 +27,7 @@ export default function PakarnaattamMakingPage() {
             </Link>
           </div>
 
-          <SoundToggle file="/Making.mpeg" volume={0.8} />
+          <SoundToggle file="/Making.mpeg" volume={0.5} />
         </div>
       </header>
 

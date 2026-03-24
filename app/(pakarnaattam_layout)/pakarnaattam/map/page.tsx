@@ -32,7 +32,7 @@ export default function PakarnaattamMapPage() {
           left="9.5%"
           image="https://ik.imagekit.io/shahansv/Urav/RitualForms.png"
           title="Ritual Forms"
-          desc="(Stories on, Six Theyyam Figures)"
+          desc="(Stories on, Theyyam Figures)"
           position="bottom-right"
           onHover={setTorchTarget}
         />
