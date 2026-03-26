@@ -55,7 +55,7 @@ export default function PakarnaattamNeeluPage() {
             <br className="hidden sm:block" /> Grandma began
           </p>
           <p>
-            Listening closely to what his grandmother has to say about Theyyam,
+            Listening closely to what her grandmother has to say about Theyyam,
             little Neelu's curiosity begins to grow......
           </p>
           <p>

@@ -39,7 +39,7 @@ export function Header() {
             src="https://ik.imagekit.io/shahansv/Urav/logo.png?updatedAt=1772264205372"
             alt="Urav company logo"
             width={120}
-            height={31}
+            height={33.8}
             priority
             className="h-auto w-auto"
           />
