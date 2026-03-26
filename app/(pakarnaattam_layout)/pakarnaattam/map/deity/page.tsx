@@ -34,7 +34,7 @@ export default function PakarnaattamDeityPage() {
       <article className="relative z-10 flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-16">
         <div className="space-y-6 sm:space-y-8 sm:text-lg md:text-xl text-neutral-200 leading-relaxed">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight my-16">
-            Thottam (Sacred Songs)
+            Shashikumar
           </h1>
           <Image
             src="/Deity.jpg"

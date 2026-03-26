@@ -36,7 +36,7 @@ export default function PakarnaattamPage() {
   return (
     <main
       className={`min-h-screen antialiased transition-colors duration-700 ${
-        darkBg ? "bg-[#121212]" : "bg-[#F5F2E9]"
+        darkBg ? "bg-[#000000]" : "bg-[#F5F2E9]"
       }`}
       role="main"
       aria-labelledby="pakarnattam-heading"
