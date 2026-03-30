@@ -142,7 +142,7 @@ function TeamCard({
             src={member.image}
             alt={`Photo of ${member.name}`}
             loading={index === 0 ? "eager" : "lazy"}
-            className="w-full h-full object-cover object-top grayscale block"
+            className="w-full h-full object-cover object-center grayscale block"
           />
         </div>
 
