@@ -13,12 +13,18 @@ const garamond = EB_Garamond({
 type Position = "left" | "center" | "right" | "hidden";
 
 const slides = [
-  { src: "/carousel-img1.jpg", title: "Living traditions" },
-  { src: "/carousel-img2.jpg", title: "Cultural narratives" },
-  { src: "/carousel-img3.jpg", title: "Communities" },
-  { src: "/carousel-img4.png", title: "Indigenous practice" },
-  { src: "/carousel-img6.png", title: "Rituals" },
-  { src: "/carousel-img7.png", title: "Cultural narratives" },
+  { src: "/carousel-img/living-traditions.jpg", title: "Living traditions" },
+  {
+    src: "/carousel-img/cultural-narratives.jpg",
+    title: "Cultural narratives",
+  },
+  { src: "/carousel-img/communities.jpg", title: "Communities" },
+  {
+    src: "/carousel-img/indigenous-practice.png",
+    title: "Indigenous practice",
+  },
+  { src: "/carousel-img/rituals.png", title: "Rituals" },
+  { src: "/carousel-img/communities2.png", title: "Cultural narratives" },
 ];
 
 export const Carousel: React.FC = (): JSX.Element => {
@@ -165,9 +171,10 @@ export const Carousel: React.FC = (): JSX.Element => {
                 src={slide.src}
                 alt={`carousel-${index}`}
                 fill
-                sizes="(max-width: 640px) 100vw,
-                       (max-width: 1024px) 70vw,
-                       50vw"
+                priority
+                sizes="(max-width: 640px) 80vw,
+                (max-width: 1024px) 50vw,
+                33vw"
                 className="object-cover rounded-2xl"
               />
               {position === "center" && (
