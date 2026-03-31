@@ -431,7 +431,7 @@ export default function PakarnaattamMapPage({
       )}
 
       <p className="absolute top-8 md:top-16 left-1/2 -translate-x-1/2 z-20 text-white animate-pulse text-center text-sm md:text-base px-4 whitespace-nowrap pointer-events-none">
-        Point the torch towards the dots to select
+        Click on any dot to continue
       </p>
     </main>
   );

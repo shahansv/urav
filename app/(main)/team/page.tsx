@@ -23,7 +23,7 @@ const teamMembers: Member[] = [
     name: "Niranjan Kaliyath",
     designation: "Visual Artist",
     role: "Art & Design",
-    image: "/assets/niranjan.png",
+    image: "/assets/niranjan.jpeg",
     bio: "A visual artist and a curious sapien, whose drawn to the exploration of art, culture, and the narratives that shape human experience. I find meaning in observing the world closely its people, traditions, and evolving identities while also embracing the spontaneity and joy that come with creative exploration.\n\nMy practice moves between thoughtful research and playful experimentation, where I enjoy exploring different forms, materials, and visual languages and deeply interested in how stories are carried and transformed over time, and how they can be translated into visuals that feel both meaningful and engaging.\n\nFor me, art is not only a medium of expression but also a space to explore, question, and play to try, to fail, and to discover new perspectives. Whether rooted in culture or driven by curiosity, my work aims to create visual experiences that are reflective, expressive, and alive with a sense of exploration.",
   },
   {
