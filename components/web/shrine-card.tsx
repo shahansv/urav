@@ -58,7 +58,13 @@ export function ShrineCard({
           transition={{ duration: 0.6, ease: "easeInOut" }}
           className="absolute inset-0"
         >
-          <Image src={defaultImg} alt={title} fill className="object-contain" />
+          <Image
+            src={defaultImg}
+            alt={title}
+            priority
+            fill
+            className="object-contain"
+          />
         </motion.div>
 
         <motion.div
@@ -66,7 +72,13 @@ export function ShrineCard({
           transition={{ duration: 0.6, ease: "easeInOut" }}
           className="absolute inset-0"
         >
-          <Image src={hoverImg} alt={title} fill className="object-contain" />
+          <Image
+            src={hoverImg}
+            alt={title}
+            fill
+            priority
+            className="object-contain"
+          />
         </motion.div>
       </div>
 

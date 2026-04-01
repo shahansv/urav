@@ -65,7 +65,7 @@ export default function PakarnaattamKathivanoorVeeranPage() {
 
           <figure className="flex justify-center">
             <Image
-              src="/pakarnaattam/kathivanoor-veeran-img2.jpg"
+              src="/pakarnaattam/kathivanoor-veeran-img2.png"
               alt="kathivanoor veeran Illustration"
               width={2048}
               height={2048}
