@@ -2,13 +2,30 @@
 
 import { useState } from "react";
 import { toast } from "sonner";
-import { addIdea } from "@/lib/api";
+
+const API_URL = "https://urav.up.railway.app";
 
 type IdeaFormData = {
   name: string;
   email: string;
   idea: string;
 };
+
+async function addIdea(data: IdeaFormData) {
+  const res = await fetch(`${API_URL}/addIdea`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+
+  const json = await res.json();
+
+  if (!res.ok) {
+    throw new Error(json?.message || "Failed to submit idea");
+  }
+
+  return json;
+}
 
 export function IdeaForm() {
   const [loading, setLoading] = useState(false);
@@ -58,11 +75,7 @@ export function IdeaForm() {
         error: (err) => err.message || "Something went wrong",
       });
 
-      setFormData({
-        name: "",
-        email: "",
-        idea: "",
-      });
+      setFormData({ name: "", email: "", idea: "" });
     } catch (error) {
       console.error(error);
     } finally {

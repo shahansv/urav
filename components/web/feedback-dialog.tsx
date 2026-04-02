@@ -9,7 +9,24 @@ import {
 } from "@/components/ui/alert-dialog";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
-import { addIdea } from "@/lib/api";
+
+const API_URL = "https://urav.up.railway.app";
+
+async function addIdea(data: { name: string; email: string; idea: string }) {
+  const res = await fetch(`${API_URL}/addIdea`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+
+  const json = await res.json();
+
+  if (!res.ok) {
+    throw new Error(json?.message || "Failed to submit idea");
+  }
+
+  return json;
+}
 
 export function FeedbackDialog() {
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -73,7 +90,7 @@ export function FeedbackDialog() {
 
   return (
     <AlertDialog open={dialogOpen} onOpenChange={setDialogOpen}>
-      <AlertDialogContent className="bg-black border border-neutral-900 rounded-2xl p-6  w-full gap-0">
+      <AlertDialogContent className="bg-black border border-neutral-900 rounded-2xl p-6 w-full gap-0">
         <AlertDialogHeader className="mb-4">
           <AlertDialogTitle className="text-white text-xl font-semibold">
             Feedback
