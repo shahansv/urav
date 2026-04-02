@@ -1,3 +1,4 @@
+import { FeedbackDialog } from "@/components/web/feedback-dialog";
 import { ReactNode } from "react";
 
 export default function PakarnaattamLayout({
@@ -8,6 +9,7 @@ export default function PakarnaattamLayout({
   return (
     <main className="flex flex-col min-h-screen bg-black text-neutral-100">
       {children}
+      <FeedbackDialog />
     </main>
   );
 }

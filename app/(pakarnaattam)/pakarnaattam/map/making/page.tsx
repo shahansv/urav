@@ -1,3 +1,4 @@
+import { FeedbackLink } from "@/components/web/feedback-link";
 import PakarnaattamHeader from "@/components/web/pakarnaattam-header";
 import ScrollButton from "@/components/web/scroll-button";
 import Image from "next/image";
@@ -228,12 +229,11 @@ export default function PakarnaattamMakingPage() {
       </article>
 
       <section className="h-52 flex justify-center items-center text-sm sm:text-base">
-        <Link
+        <FeedbackLink
           href="/pakarnaattam/map"
           className="hover:underline hover:animate-pulse"
-        >
-          Go back to map
-        </Link>
+          text="Go back to map"
+        ></FeedbackLink>
       </section>
 
       <ScrollButton isDarkBackground />

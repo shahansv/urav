@@ -1,3 +1,4 @@
+import { FeedbackLink } from "@/components/web/feedback-link";
 import PakarnaattamHeader from "@/components/web/pakarnaattam-header";
 import ScrollButton from "@/components/web/scroll-button";
 import Image from "next/image";
@@ -6,7 +7,10 @@ import Link from "next/link";
 export default function PakarnaattamGulikanPage() {
   return (
     <main>
-      <PakarnaattamHeader soundFile="/pakarnaattam/gulikan.opus" soundVolume={0.8} />
+      <PakarnaattamHeader
+        soundFile="/pakarnaattam/gulikan.opus"
+        soundVolume={0.8}
+      />
       <article className="mx-auto w-full max-w-5xl px-4 py-8 lg:px-14 ">
         <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-lg leading-relaxed">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight my-6">
@@ -122,18 +126,17 @@ export default function PakarnaattamGulikanPage() {
       </article>
 
       <section className="h-52 flex justify-between items-center text-sm sm:text-base mx-auto w-full max-w-5xl px-4 py-8 lg:px-14">
-        <Link
+        <FeedbackLink
           href="/pakarnaattam/map"
           className="hover:underline hover:animate-pulse"
-        >
-          Go back to map
-        </Link>
-        <Link
+          text="Go back to map"
+        ></FeedbackLink>
+
+        <FeedbackLink
           href="/pakarnaattam/map/ritual-forms"
           className="hover:underline hover:animate-pulse"
-        >
-          Select a different theyyam story
-        </Link>
+          text=" Select a different theyyam story"
+        ></FeedbackLink>
       </section>
 
       <ScrollButton isDarkBackground />

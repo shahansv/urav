@@ -1,3 +1,4 @@
+import { FeedbackLink } from "@/components/web/feedback-link";
 import PakarnaattamHeader from "@/components/web/pakarnaattam-header";
 import ScrollButton from "@/components/web/scroll-button";
 import Image from "next/image";
@@ -7,9 +8,9 @@ export default function PakarnaattamRhythmsPage() {
   return (
     <main>
       <PakarnaattamHeader
-              soundFile="/pakarnaattam/story.opus"
-              soundVolume={0.6}
-            />
+        soundFile="/pakarnaattam/story.opus"
+        soundVolume={0.6}
+      />
       <article className="mx-auto w-full max-w-5xl px-4 py-8 lg:px-14 ">
         <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-lg leading-relaxed mb-16 md-24">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight my-6">
@@ -131,12 +132,11 @@ export default function PakarnaattamRhythmsPage() {
       </article>
 
       <section className="h-52 flex justify-center items-center text-sm sm:text-base">
-        <Link
+        <FeedbackLink
           href="/pakarnaattam/map"
           className="hover:underline hover:animate-pulse"
-        >
-          Go back to map
-        </Link>
+          text="Go back to map"
+        ></FeedbackLink>
       </section>
 
       <ScrollButton isDarkBackground />

@@ -1,3 +1,4 @@
+import { FeedbackLink } from "@/components/web/feedback-link";
 import PakarnaattamHeader from "@/components/web/pakarnaattam-header";
 import ScrollButton from "@/components/web/scroll-button";
 import Image from "next/image";
@@ -149,18 +150,17 @@ export default function PakarnaattamPottanPage() {
       </article>
 
       <section className="h-52 flex justify-between items-center text-sm sm:text-base mx-auto w-full max-w-5xl px-4 py-8 lg:px-14">
-        <Link
+        <FeedbackLink
           href="/pakarnaattam/map"
           className="hover:underline hover:animate-pulse"
-        >
-          Go back to map
-        </Link>
-        <Link
+          text="Go back to map"
+        ></FeedbackLink>
+
+        <FeedbackLink
           href="/pakarnaattam/map/ritual-forms"
           className="hover:underline hover:animate-pulse"
-        >
-          Select a different theyyam story
-        </Link>
+          text=" Select a different theyyam story"
+        ></FeedbackLink>
       </section>
 
       <ScrollButton isDarkBackground />
