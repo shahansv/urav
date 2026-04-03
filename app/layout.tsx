@@ -6,6 +6,7 @@ import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/sonner";
 import PageTransition from "@/components/web/page-transition";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -40,6 +41,7 @@ export default function RootLayout({
         <SmoothScrollProvider>
           <PageTransition>{children}</PageTransition>
         </SmoothScrollProvider>
+        <GoogleAnalytics gaId="G-6Q3DP40R6K" />
       </body>
     </html>
   );
